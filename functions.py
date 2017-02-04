@@ -20,4 +20,23 @@ def editMe():
 		os.system("sh runner.sh")
 		sys.exit(1)
 
+def replaceGuesser(optimum_val):
+	with open("findvalue.py", "r+") as f:
+		olddata = f.read() # read everything in the file
+		f.seek(0)
+		newdata = olddata.replace("findOptimum(opt)",str(optimum_val))#avoid infinite loop
+		f.write(newdata)
+		f.close()
+		#os.exec*()
+		os.system("sh runner_findVal.sh")
+		sys.exit(1)
+
+def findOptimum(glob_optimum):
+	val=0
+	for val in range(100):
+		if(val==glob_optimum):
+			replaceGuesser(val)
+			break
+	return val
+
 
