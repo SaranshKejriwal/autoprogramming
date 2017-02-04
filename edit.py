@@ -1,6 +1,9 @@
 import fileinput
 from random import randint #for random threshold of filter 
 from functions import *
+
+'''this is the first code that uses autoprog
+run using python edit.py'''
 with open("edit.py", "r+") as f:
 	#olddata = f.read() # read everything in the file
 	f.seek(0) # rewind
